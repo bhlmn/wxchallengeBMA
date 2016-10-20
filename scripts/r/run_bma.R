@@ -70,8 +70,6 @@ data.all$vdate = factor(data.all$vdate)
 
 data.06 = data.all[substr(data.all$rundate, 9, 10) == '06' &
                      data.all$station == station,]
-data.12 = data.all[substr(data.all$rundate, 9, 10) == '12' &
-                     data.all$station == station,]
 
 # Remove second to last row
 days = length(data.06$rundate)

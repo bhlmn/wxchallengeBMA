@@ -32,8 +32,8 @@ if not os.path.exists(output):
 for ens in gefs_ens:
     for hr in gefs_hrs:
         url = 'http://www.ftp.ncep.noaa.gov/data/nccf/com/gens/prod/gefs.' + \
-              day + '/' + run + '/pgrb2ap5/'
-        filename = ens + '.t' + run + 'z.pgrb2a.0p50.f0' + str(hr)
+              day + '/06/pgrb2ap5/'
+        filename = ens + '.t06z.pgrb2a.0p50.f0' + str(hr)
         url += filename
 
         outfile = output + '/' + filename

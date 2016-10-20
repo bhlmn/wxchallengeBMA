@@ -30,7 +30,7 @@ gefs_ens = ['gec00', 'gep01', 'gep02', 'gep03', 'gep04', 'gep05', 'gep06',
 gefs_hrs = [24, 27, 30, 33, 36, 39, 42, 45, 48]
 
 # Right now I'm just looking at 06Z runs, can include 12Z run in the future?
-gefs_runs = [06]
+gefs_runs = ['06']
 
 stations = ['KEYW', 'KGRI', 'KMDT', 'KRNO', 'KSEA', 'KTVC']
 
@@ -196,7 +196,7 @@ for run in gefs_runs:
     df_forecasts = pd.concat([df_forecasts, df])
 
 # Now load the master csv and update the information
-df_master = pd.read_csv('/home/bryan/Dropbox/wxchallenge/data/final/master.csv')
+df_master = pd.read_csv('/home/bryan/Dropbox/wxchallengeBMA/data/master.csv')
 
 # If, by chance, the information trying to be added already exists, we will drop the duplicates, but
 # we have to change the data type from df_forecasts for rundate and vdate to int64 in order to do so
@@ -208,4 +208,4 @@ df_final = pd.concat([df_master, df_forecasts]).reset_index(drop = True)
 df_final = df_final.drop_duplicates(subset=['rundate', 'station'], keep='last').reset_index(drop = True)
 
 # Now save the final dataframe as a csv
-df_final.to_csv('/home/bryan/Dropbox/wxchallenge/data/final/master.csv', index=False)
+df_final.to_csv('/home/bryan/Dropbox/wxchallengeBMA/data/master.csv', index=False)
