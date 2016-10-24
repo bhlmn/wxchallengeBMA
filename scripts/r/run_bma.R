@@ -59,7 +59,7 @@ plotPDF = function(ensPDFData, ensData, var) {
 }
 
 # The station we are analyzing
-station = 'KMDT'
+station = 'KGRI'
 
 # First convert mph to knots
 data.all$wspd.obs = data.all$wspd.obs * 0.868976
