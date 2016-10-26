@@ -87,6 +87,13 @@ data.06$rundate[days] = data.06$rundate[days.1]
 data.06$vdate[days] = data.06$vdate[days.1]
 data.06 = data.06[-days.1,]
 
+# We only need 30 days of training data, so only keep the most recent 30 rows
+# plus 1 more for the next run.
+if (days.1 > 31) {
+    days.start <- days.1 - 30
+    data.06 <- data.06[days.start:days.1, ]
+}
+
 # If I don't have 30 training days yet, then determine the number.
 training.days = 30
 if (days.1 < 31) {training.days = days.1 - 1}
