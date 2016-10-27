@@ -1,5 +1,7 @@
 library(ensembleBMA)
 library(reshape2)
+
+setwd('~/Dropbox/wxchallengeBMA/scripts/r/')
 data.all = read.csv('../../data/master.csv', header = T)
 
 # Get the PDF of a BMA fit
