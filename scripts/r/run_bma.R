@@ -148,11 +148,13 @@ data.06.wspd = ensembleData(forecasts = data.06[,fcsts.wspd],
 # Run BMA for tmax, tmin, precip, and wspd
 bma.06.tmax = ensembleBMA(data.06.tmax,
                           trainingDays = training.days,
-                          model = 'normal')
+                          model = 'normal',
+                          minCRPS = TRUE)
 
 bma.06.tmin = ensembleBMA(data.06.tmin,
                           trainingDays = training.days,
-                          model = 'normal')
+                          model = 'normal',
+                          minCRPS = TRUE)
 
 # Precip isn't working yet. Always complains that there isn't enough nonzero
 # days in the training data.
